@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="a36096f5-ff98-4d4d-9646-8c7ca74e99b8" name="dspKororaa" url="http://137.189.34.16">
+        <fileTransfer host="137.189.34.16" port="10522" rootFolder="/home/gyzhang" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="10522" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

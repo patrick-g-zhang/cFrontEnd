@@ -1,0 +1,699 @@
+aa    a: 
+aai    a: i: 
+aak    a: k 
+aam    a: m 
+aan    a: n 
+aang    a: N 
+aap    a: p 
+aat    a: t 
+aau    a: u: 
+ai    a i: 
+ak    a k 
+am    a m 
+an    a n 
+ang    a N 
+at    a t 
+au    a u: 
+baa    p a: 
+baai    p a: i: 
+baak    p a: k 
+baan    p a: n 
+baap    p a: p 
+baat    p a: t 
+baau    p a: u: 
+bai    p a i: 
+bak    p a k 
+bam    p a m 
+ban    p a n 
+bang    p a N 
+bat    p a t 
+be    p E: 
+bei    p e i: 
+ben    p E: N 
+beng    p E: N 
+bik    p I k 
+bin    p i: n 
+bing    p I N 
+bit    p i: t 
+biu    p i: u:
+bi     p i:
+bo    p O: 
+bok    p O: k 
+cok    ts_h O: k
+bon    p O: k 
+bong    p O: N 
+bou    p o u: 
+bu    p u: 
+bui    p u: i: 
+buk    p U k 
+bum    p u: n 
+bun    p u: n 
+bung    p U N 
+ung		U N
+but    p u: t 
+caa    ts_h a: 
+caai    ts_h a: i: 
+caak    ts_h a: k 
+caam    ts_h a: m 
+caan    ts_h a: n 
+caang    ts_h a: N 
+caap    ts_h a: p 
+caat    ts_h a: t 
+caau    ts_h a: u: 
+cai    ts_h a i: 
+cak    ts_h a k 
+cam    ts_h a m 
+can    ts_h a n 
+cang    ts_h a N 
+cap    ts_h a p 
+cat    ts_h a t 
+cau    ts_h a u: 
+ce    ts_h E: 
+cek    ts_h E: k 
+ceng    ts_h E: N 
+ceoi    ts_h eo i: 
+ceon    ts_h eo n 
+ceot    ts_h eo t 
+cet    ts_h E: k 
+ci    ts_h i: 
+cik    ts_h I k 
+cim    ts_h i: m 
+cin    ts_h i: n 
+cing    ts_h I N 
+cip    ts_h i: p 
+cit    ts_h i: t 
+ciu    ts_h i: u: 
+co    ts_h O: 
+coe    ts_h oe 
+coek    ts_h oe k 
+coen    ts_h oe N 
+coeng    ts_h oe N 
+coi    ts_h O: i: 
+con    ts_h O: n 
+cong    ts_h O: N 
+cou    ts_h o u: 
+cuk    ts_h U k 
+cung    ts_h U N 
+cyu    ts_h y: 
+cyum    ts_h y: n 
+cyun    ts_h y: n 
+cyut    ts_h y: t 
+daa    t a: 
+daai    t a: i: 
+daak    t a: k 
+daam    t a: m 
+daan    t a: n 
+daang    t a: N 
+daap    t a: p 
+daat    t a: t 
+dai    t a i: 
+dak    t a k 
+dam    t a m 
+dan    t a n 
+dang    t a N 
+dap    t a p 
+dat    t a t 
+dau    t a u: 
+de    t E: 
+dei    t e i: 
+dek    t E: k 
+deng    t E: N 
+deoi    t eo i: 
+deon    t eo n 
+di    t i: 
+dik    t I k 
+dim    t i: m 
+din    t i: n 
+ding    t I N 
+dip    t i: p 
+dit    t i: t 
+diu    t i: u: 
+do    t O: 
+doe    t oe 
+doek    t oe k 
+doeng    t oe N 
+doi    t O: i: 
+dok    t O: k 
+don    t O: n 
+dong    t O: N 
+dou    t o u: 
+duk    t U k 
+dum    t u: n 
+dung    t U N 
+dyun    t y: n 
+dyut    t y: t 
+e	E: 
+faa    f a:
+fing    f I N
+faai    f a: i: 
+faak    f a: k 
+faan    f a: n 
+faat    f a: t 
+faau    f a: u: 
+fai    f a i: 
+fan    f a n 
+fang    f a N 
+fat    f a t 
+fau    f a u: 
+fe    f E: 
+fei    f e i: 
+fo    f O: 
+fok    f O: k 
+fon    f O: n 
+fong    f O: N 
+fu    f u: 
+fui    f u: i: 
+fuk    f U k 
+fun    f u: n 
+fung    f U N 
+fut    f u: t 
+gaa    k a: 
+gaai    k a: i: 
+gaak    k a: k 
+gaam    k a: m 
+gaan    k a: n 
+gaang    k a: N 
+gaap    k a: p 
+gaat    k a: t 
+gaau    k a: u: 
+gai    k a i: 
+gak    k a k 
+gam    k a m 
+gan    k a n 
+gang    k a N 
+gap    k a p 
+gat    k a t 
+gau    k a u: 
+ge    k E: 
+gei    k e i: 
+gek    k E: k 
+geng    k E: N 
+geoi    k eo i: 
+gik    k I k 
+gim    k i: m 
+gin    k i: n 
+ging    k I N 
+gip    k i: p 
+git    k i: t 
+giu    k i: u: 
+go    k O: 
+goe    k oe 
+goek    k oe k 
+goeng    k oe N 
+goi    k O: i: 
+gok    k O: k 
+gon    k O: n 
+gong    k O: N 
+got    k O: t 
+gou    k o u: 
+gu    k u: 
+guk    k U k 
+gum    k u: n 
+gun    k u: n 
+gung    k U N 
+gwaa    k_w a: 
+gwaai    k_w a: i: 
+gwaak    k_w a: k 
+gwaam    k_w a: m 
+gwaan    k_w a: n 
+gwaat    k_w a: t 
+gwai    k_w a i: 
+gwan    k_w a n 
+gwang    k_w a N 
+gwat    k_w a t 
+gwing    k_w I N 
+gwo    k_w O: 
+gwok    k_w O: k 
+gwon    k_w O: n 
+gwong    k_w O: N
+gwun    k_w u: n
+gyun    k y: n 
+haa    h a: 
+haai    h a: i: 
+haak    h a: k 
+haam    h a: m 
+haan    h a: n 
+haang    h a: N 
+haap    h a: p 
+haat    h a: t 
+haau    h a: u: 
+hai    h a i: 
+hak    h a k 
+ham    h a m 
+han    h a n 
+hang    h a N 
+hap    h a p 
+hat    h a t 
+hau    h a u: 
+hei    h e i: 
+hek    h E: k 
+hen    h E: N 
+heng    h E: N 
+heoi    h eo i:
+hng     h N
+him    h i: m
+hin    h i: n 
+hing    h I N 
+hip    h i: p 
+hit    h i: t 
+hiu    h i: u: 
+ho    h O: 
+hoe    h oe 
+hoek    h oe k 
+hoen    h oe N 
+hoeng    h oe N 
+hoi    h O: i: 
+hok    h O: k 
+hon    h O: n 
+hong    h O: N 
+hot    h O: t 
+hou    h o u: 
+huk    h U k 
+hum    h u: n 
+hung    h U N 
+hyun    h y: n 
+hyut    h y: t 
+in    i: n 
+jaa    j a:
+jo     j O:
+jaau    j a: u: 
+jai    j a i: 
+jak    j a k 
+jam    j a m 
+jan    j a n 
+jap    j a p 
+jat    j a t 
+jau    j a u: 
+je    j E: 
+jeng    j E: N 
+jeoi    j eo i: 
+jeon    j eo n 
+ji    j i: 
+jik    j I k 
+jim    j i: m 
+jin    j i: n 
+jing    j I N 
+jip    j i: p 
+jit    j i: t 
+jiu    j i: u: 
+joe    j oe 
+joek    j oe k 
+joen    j oe N 
+joeng    j oe N 
+juk    j U k 
+jung    j U N 
+jyu    j y: 
+jyun    j y: n 
+jyut    j y: t 
+kaa    k_h a: 
+kaak    k_h a: k 
+kaan    k_h a: n 
+kaat    k_h a: t 
+kaau    k_h a: u: 
+kai    k_h a i: 
+kam    k_h a m 
+kan    k_h a n 
+kang    k_h a N 
+kap    k_h a p 
+kat    k_h a t 
+kau    k_h a u: 
+ke    k_h E: 
+kei    k_h e i: 
+kek    k_h E: k 
+keoi    k_h eo i: 
+kik    k_h I k 
+kim    k_h i: m 
+kin    k_h i: n 
+king    k_h I N 
+kit    k_h i: t 
+kiu    k_h i: u: 
+ko    k_h O: 
+koe    k_h oe 
+koek    k_h oe k 
+koeng    k_h oe N 
+koi    k_h O: i: 
+kok    k_h O: k 
+kon    k_h O: n 
+kong    k_h O: N 
+kou    k_h o u: 
+ku    k_h u: 
+kui    k_h u: i:
+gui    k u: i:
+kuk    k_h U k 
+kung    k_h U N 
+kut    k_h u: t 
+kwaa    k_h_w a: 
+kwaak    k_h_w a: k 
+kwaan    k_h_w a: n 
+kwaang    k_h_w a: N 
+kwai    k_h_w a i: 
+kwan    k_h_w a n 
+kwik    k_h_w I k 
+kwok    k_h_w O: k 
+kwong    k_h_w O: N
+kwui    k_h_w u: i:
+kyun    k_h y: n 
+kyut    k_h y: t 
+laa    l a: 
+laai    l a: i: 
+laak    l a: k 
+laam    l a: m 
+laan    l a: n 
+laang    l a: N 
+laap    l a: p 
+laat    l a: t 
+laau    l a: u: 
+lai    l a i: 
+lak    l a k 
+lam    l a m 
+lan    l a n 
+lang    l a N 
+lap    l a p 
+lat    l a t 
+lau    l a u: 
+le    l E: 
+lei    l e i: 
+lek    l E: k 
+lem    l E: N 
+len    l E: N 
+leng    l E: N 
+leoi    l eo i: 
+leon    l eo n 
+leot    l eo t 
+li    l i: 
+lik    l I k 
+lim    l i: m 
+lin    l i: n 
+ling    l I N 
+lip    l i: p 
+lit    l i: t 
+liu    l i: u: 
+lo    l O: 
+loe    l oe 
+loek    l oe k 
+loeng    l oe N 
+loi    l O: i: 
+lok    l O: k 
+lon    l O: n 
+long    l O: N 
+lou    l o u: 
+lu    l u: 
+luk    l U k 
+lung    l U N 
+lyun    l y: n 
+lyut    l y: t 
+m    m 
+maa    m a: 
+maai    m a: i: 
+maak    m a: k 
+maan    m a: n 
+maang    m a: N 
+maat    m a: t 
+maau    m a: u: 
+mai    m a i: 
+mak    m a k 
+man    m a n 
+mang    m a N 
+mat    m a t 
+mau    m a u: 
+me    m E: 
+mei    m e i: 
+men    m E: N 
+meng    m E: N 
+mi    m i: 
+mik    m I k 
+min    m i: n 
+ming    m I N 
+mit    m i: t 
+miu    m i: u: 
+mo    m O: 
+mok    m O: k 
+mon    m O: n 
+mong    m O: N 
+mou    m o u: 
+mu    m u: 
+mui    m u: i: 
+muk    m U k 
+mun    m u: n 
+mung    m U N 
+mut    m u: t 
+naa    n a: 
+naai    n a: i: 
+naak    n a: k 
+naam    n a: m 
+naan    n a: n 
+naap    n a: p 
+naat    n a: t 
+naau    n a: u: 
+nai    n a i: 
+nam    n a m 
+nan    n a n 
+nang    n a N 
+nap    n a p 
+nau    n a u: 
+ne    n E: 
+nei    n e i: 
+neng    n E: N 
+neoi    n eo i: 
+neon    n eo n 
+ng    N 
+ngaa    N a: 
+ngaai    N a: i: 
+ngaak    N a: k 
+ngaam    N a: m 
+ngaan    N a: n 
+ngaang    N a: N 
+ngaap    N a: p 
+ngaat    N a: t 
+ngaau    N a: u: 
+ngai    N a i: 
+ngak    N a k 
+ngam    N a m 
+ngan    N a n 
+ngang    N a N 
+ngat    N a t 
+ngau    N a u: 
+ngo    N O: 
+ngoi    N O: i: 
+ngok    N O: k 
+ngon    N O: n 
+ngong    N O: N 
+ngou    N o u: 
+nguk    N U k 
+ni    n i: 
+nik    n I k 
+nim    n i: m 
+nin    n i: n 
+ning    n I N 
+nip    n i: p 
+nit    n i: t 
+niu    n i: u: 
+no    n O: 
+noe    n oe 
+noek    n oe k 
+noeng    n oe N 
+noi    n O: i: 
+nok    n O: k 
+nong    n O: N 
+nou    n o u: 
+nuk    n U k 
+nung    n U N 
+nyun    n y: n 
+nyut    n y: t 
+o    O: 
+oi    O: i: 
+ok    O: k 
+on    O: n 
+ong    O: N 
+ou    o u: 
+paa    p_h a: 
+paai    p_h a: i: 
+paak    p_h a: k 
+paan    p_h a: n 
+paang    p_h a: N 
+paat    p_h a: t 
+paau    p_h a: u: 
+pai    p_h a i: 
+pan    p_h a n 
+pang    p_h a N 
+pat	p_h E: t
+pau p a u:
+pe    p_h E: 
+pei    p_h e i: 
+pek    p_h E: k 
+pen    p_h E: N 
+peng    p_h E: N 
+pik    p_h I k 
+pin    p_h i: n 
+ping    p_h I N 
+pit    p_h i: t 
+piu    p_h i: u: 
+po    p_h O: 
+pok    p_h O: k 
+pon    p_h O: n 
+pong    p_h O: N 
+pou    p_h o u: 
+pui    p_h u: i: 
+puk    p_h U k 
+pun    p_h u: n 
+pung    p_h U N 
+put    p_h u: t 
+saa    s a: 
+saai    s a: i: 
+saak    s a: k 
+saam    s a: m 
+saan    s a: n 
+saang    s a: N 
+saap    s a: p 
+saat    s a: t 
+saau    s a: u: 
+sai    s a i: 
+sak    s a k 
+sam    s a m 
+san    s a n 
+sang    s a N 
+sap    s a p 
+sat    s a t 
+sau    s a u: 
+se    s E: 
+sei    s e i: 
+sek    s E: k 
+seng    s E: N 
+seoi    s eo i: 
+seon    s eo n 
+seot    s eo t 
+si    s i: 
+sik    s I k 
+sil    s i: l 
+sim    s i: m 
+sin    s i: n 
+sing    s I N 
+sip    s i: p 
+sit    s i: t 
+siu    s i: u: 
+so    s O: 
+soe    s oe 
+soek    s oe k 
+soen    s oe N 
+soeng    s oe N 
+soet    s oe k 
+soi    s O: i: 
+sok    s O: k 
+son    s O: n 
+song    s O: N 
+sou    s o u: 
+suk    s U k 
+sung    s U N 
+syu    s y: 
+syun    s y: n 
+syut    s y: t 
+taa    t_h a: 
+taai    t_h a: i: 
+taam    t_h a: m 
+taan    t_h a: n 
+taap    t_h a: p 
+taat    t_h a: t 
+taau    t_h a: u: 
+tai    t_h a i: 
+tam    t_h a m 
+tan    t_h a n 
+tang    t_h a N 
+tap    t_h a p 
+tau    t_h a u: 
+te    t_h E: 
+tei    t_h e i: 
+tek    t_h E: k 
+ten    t_h E: N 
+teng    t_h E: N 
+teoi    t_h eo i: 
+teon    t_h eo n 
+ti    t_h i: 
+tik    t_h I k 
+tim    t_h i: m 
+tin    t_h i: n 
+ting    t_h I N 
+tip    t_h i: p 
+tit    t_h i: t 
+tiu    t_h i: u: 
+to    t_h O: 
+toe    t_h oe 
+toi    t_h O: i: 
+tok    t_h O: k 
+ton    t_h O: n 
+tong    t_h O: N 
+tou    t_h o u: 
+tuk    t_h U k 
+tung    t_h U N 
+tut    t_h u: t 
+tyun    t_h y: n 
+tyut    t_h y: t 
+uk    U k 
+waa    w a: 
+waai    w a: i: 
+waak    w a: k 
+waan    w a: n 
+waang    w a: N 
+waat    w a: t 
+wai    w a i: 
+wan    w a n 
+wang    w a N 
+wat    w a t 
+wei    w e i: 
+wik    w I k 
+wing    w I N 
+wo    w O: 
+wok    w O: k 
+won    w O: n 
+wong    w O: N 
+wu    w u: 
+wui    w u: i: 
+wun    w u: n 
+wut    w u: t 
+yun    j y: n 
+zaa    ts a: 
+zaai    ts a: i: 
+zaak    ts a: k 
+zaam    ts a: m 
+zaan    ts a: n 
+zaang    ts a: N 
+zaap    ts a: p 
+zaat    ts a: t 
+zaau    ts a: u: 
+zai    ts a i: 
+zak    ts a k 
+zam    ts a m 
+zan    ts a n 
+zang    ts a N 
+zap    ts a p 
+zat    ts a t 
+zau    ts a u: 
+ze    ts E: 
+zek    ts E: k 
+zen    ts E: N 
+zeng    ts E: N 
+zeoi    ts eo i: 
+zeon    ts eo n 
+zeot    ts eo t 
+zi    ts i: 
+zik    ts I k 
+zim    ts i: m 
+zin    ts i: n 
+zing    ts I N 
+zip    ts i: p 
+zit    ts i: t 
+ziu    ts i: u: 
+zo    ts O: 
+zoe    ts oe 
+zoek    ts oe k 
+zoen    ts oe N 
+zoeng    ts oe N 
+zoi    ts O: i: 
+zok    ts O: k 
+zon    ts O: n 
+zong    ts O: N 
+zou    ts o u: 
+zuk    ts U k 
+zung    ts U N 
+zyu    ts y: 
+zyun    ts y: n 
+zyut    ts y: t 
