@@ -213,7 +213,7 @@ class FrontEnd(object):
             word_index += 1
             new_word_list.append(word)
             new_pos_list.append(pos)
-        logging.info(''.join(new_word_list))
+        # logging.info(''.join(new_word_list))
         return new_word_list,new_pos_list, prosodic_map
 
     def get_word_pos_list(self, raw_text, tokenizer):

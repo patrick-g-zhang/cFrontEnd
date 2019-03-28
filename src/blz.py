@@ -16,6 +16,8 @@ from praatio import tgio
 from collections import OrderedDict
 import pdb
 logging.basicConfig(level = logging.INFO,format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+import coloredlogs
+coloredlogs.install(level='DEBUG')
 logger = logging.getLogger(__name__)
 
 class blzFrontEnd(FrontEnd):
@@ -28,7 +30,8 @@ class blzFrontEnd(FrontEnd):
         SECRET_KEY = 'Zhe7VieQlGeSvGoPbeHdfLLeDF78KOYO'
         self.client = AipNlp(APP_ID, API_KEY, SECRET_KEY)
         self.text_file_path = "/Users/patrickzhang/Documents/text/text.txt"
-        self.alignment_file_dir = "/Users/patrickzhang/Documents/aligned_blz_multi_2/0"
+        # where is alignment file
+        self.alignment_file_dir = "/Users/patrickzhang/Documents/aligned_blz_multi_2/"
         self.label_phone_align = "/Users/patrickzhang/projects/cFrontEnd/exp/blz/train/label_phone_align"
 
     def pre_process(self, raw_text):
@@ -59,7 +62,11 @@ class blzFrontEnd(FrontEnd):
             sent_index, sent_content = self.pre_process(text_line)
             # corresponding alignment file
             sent_index = sent_index.strip()
+            # if alignment file does not exist
             alignment_file_path = os.path.join(self.alignment_file_dir,sent_index+'.TextGrid')
+            if not os.path.exists(alignment_file_path):
+                logging.warnings("alignment file {} does not exist".format(alignment_file_path))
+                continue
             # corresponding label file
             label_phone_path = os.path.join(self.label_phone_align, sent_index + '.lab')
             label_phone_fid = open(label_phone_path, 'w')
@@ -93,18 +100,25 @@ class blzFrontEnd(FrontEnd):
             all_sent = self.sentence_spliting(word_list,pos_list)
             sent_num = len(all_sent)
             prev_sil_phone_index = 0 # index in align phone
+            cur_sil_phone_index = 0
             for num, word_pos in enumerate(all_sent):
                 # for each sentence and num is position of sentence in paragraph
                 sent_word_list, sent_pos_list = word_pos
                 # remove inter-sentence's punc and add prosodic information here
                 new_word_list, new_pos_list,phrase_map = self.remove_punc(sent_word_list,sent_pos_list)
+                logger.debug("sentence content {}".format(''.join(new_word_list)))
                 phone_list, tone_list, syl_map, word_map,non_tone_line_phones = self.get_word_phone_list(new_word_list,using_tool=True)
                 non_sil_len = len(phone_list)
-                sil_ali_phone_index = non_silence_index_list[non_sil_len]
-                sil_phone_list = para_sil_phone_list[prev_sil_phone_index:sil_ali_phone_index]
-                start_time_list = para_start_time_list[prev_sil_phone_index:sil_ali_phone_index]
-                end_time_list = para_end_time_list[prev_sil_phone_index:sil_ali_phone_index]
-                prev_sil_phone_index = sil_ali_phone_index
+                cur_sil_phone_index += non_sil_len
+                sil_ali_phone_index = non_silence_index_list[cur_sil_phone_index-1]
+                sil_phone_list = para_sil_phone_list[prev_sil_phone_index:sil_ali_phone_index+1]
+                start_time_list = para_start_time_list[prev_sil_phone_index:sil_ali_phone_index+1]
+                end_time_list = para_end_time_list[prev_sil_phone_index:sil_ali_phone_index+1]
+                prev_sil_phone_index = sil_ali_phone_index+1
+
+                print(sil_phone_list)
+
+                pdb.set_trace()
 
                 non_sil_index = 0
                 for sil_index, sil_phone in enumerate(sil_phone_list):
@@ -167,7 +181,7 @@ class blzFrontEnd(FrontEnd):
                     cur_phrase_word_num = 'x'
                     fw_phrase_utt = 'x'
                     bw_phrase_utt = 'x'
-                    pdb.set_trace()
+                    # pdb.set_trace()
                     if c_phone != 'sil' and c_phone != 'sp':
                         # current is not silence
                         non_sil_index = sil_nonsil_map[index]
@@ -237,9 +251,8 @@ class blzFrontEnd(FrontEnd):
                                 str(num+1),str(sent_num-num),
                                 start_time_list[index], end_time_list[index])
                     logger.info(output_lab)
-                    label_phone_fid.write(output_lab
-                            )
-                label_phone_fid.close()
+                    label_phone_fid.write(output_lab)
+            label_phone_fid.close()
 
 m_blz = blzFrontEnd()
 m_blz.create_phone_labels()
