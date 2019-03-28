@@ -180,6 +180,7 @@ class MFrontEnd(object):
         file_id_canto = open(self.file_id_path, 'w')
         for text_line in textlines:
             sent_index, sent_content = self.pre_process(text_line)
+            ## extract word and pos tagging
             word_list, pos_list = self.get_word_pos_list(sent_content)
             phone_list, tone_list, syl_map, word_map = self.get_word_phone_list(word_list)
             file_id_canto.write(sent_index + '\n')

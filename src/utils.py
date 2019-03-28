@@ -8,6 +8,19 @@ from scipy.io.wavfile import read
 from scipy.io.wavfile import write
 import librosa
 # import pysndfile
+logging.basicConfig(level = logging.INFO,format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+def hasNumbers(inputString):
+    """
+    determine whether this string contains any digital number
+    :param inputString:
+    :return:
+    """
+    return any(char.isdigit() for char in inputString)
+
+def contains_letters(inputString):
+    regexp = re.compile(r"[a-z]|[A-Z]")
+    return regexp.search(inputString)
 
 def text2entries(text_file, txt_dir):
     """
@@ -24,6 +37,25 @@ def text2entries(text_file, txt_dir):
         lab_path = os.path.join(txt_dir, utt_id+'.lab')
         with open(lab_path,'w') as f_lab:
             f_lab.write(content+'\n')
+
+def text2list(text_file):
+    """
+    input a text file, return all element in this file as a list
+    text file example:
+    a
+    b
+    c
+    return list:
+    [a,b,c]
+    :param text_file:
+    :return:
+    """
+    with open(text_file,'r') as f_txt:
+        lines = f_txt.readlines()
+    text_list = []
+    for each_line in lines:
+        text_list.append(each_line.strip())
+    return text_list
 
 
 def get_duration_of_speech_corpus(wav_dir):
