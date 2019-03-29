@@ -271,8 +271,8 @@ class FrontEnd(object):
             word_map
             non_tone_line_phones
         """
-        self.english_dict = ld.get_lexicon_dict(lexicon_path='/Users/patrickzhang/Documents/text/english.dict')
-        self.chinese_dict = ld.get_lexicon_dict(lexicon_path="/Users/patrickzhang/Documents/text/lexicon_chinese_char.txt")
+        self.english_dict = ld.get_lexicon_dict(lexicon_path='/home/gyzhang/speech_database/text/blz19/english.dict')
+        self.chinese_dict = ld.get_lexicon_dict(lexicon_path="/home/gyzhang/speech_database/text/blz19/lexicon_chinese_char.txt")
         flag = False
         phone_list = []
         tone_list = []
@@ -321,14 +321,14 @@ class FrontEnd(object):
                     logging.warnings("There is a error")
                     exit(0)
                 if contains_letters(word):
-                    # pdb.set_trace()
+                  #  pdb.set_trace()
                     # 字里现在有字母
                     m_list = re.findall(r'([a-zA-Z]+)', word)
                     logging.warning("there is a letter {0}".format(word))
                     for m in m_list:
                         try:
                             # Here we need a english dictionary to get phone sequence of
-                            english_seq = self.english_dict[m]
+                            english_seq = self.english_dict[m].copy()
                             # add tone of english
                             english_seq.append('5')
                             word_phone_list.append(english_seq)

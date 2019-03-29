@@ -29,10 +29,10 @@ class blzFrontEnd(FrontEnd):
         API_KEY = 'QZ4ee5tvyLrKCZ5FZib1eDFN'
         SECRET_KEY = 'Zhe7VieQlGeSvGoPbeHdfLLeDF78KOYO'
         self.client = AipNlp(APP_ID, API_KEY, SECRET_KEY)
-        self.text_file_path = "/Users/patrickzhang/Documents/text/text.txt"
+        self.text_file_path = "/home/gyzhang/speech_database/text/blz19/text.txt"
         # where is alignment file
-        self.alignment_file_dir = "/Users/patrickzhang/Documents/aligned_blz_multi_2/"
-        self.label_phone_align = "/Users/patrickzhang/projects/cFrontEnd/exp/blz/train/label_phone_align"
+        self.alignment_file_dir = "/home/gyzhang/Documents/aligned_blz_multi_2/"
+        self.label_phone_align = "/home/gyzhang/projects/cFrontEnd/exp/blz/train/label_phone_align"
 
     def pre_process(self, raw_text):
         index = raw_text[0:7]
@@ -62,10 +62,14 @@ class blzFrontEnd(FrontEnd):
             sent_index, sent_content = self.pre_process(text_line)
             # corresponding alignment file
             sent_index = sent_index.strip()
-            # if alignment file does not exist
+            # test code
+            #if sent_index != "100168":
+           #      continue
+           # pdb.set_trace()
+           # if alignment file does not exist
             alignment_file_path = os.path.join(self.alignment_file_dir,sent_index+'.TextGrid')
             if not os.path.exists(alignment_file_path):
-                logging.warnings("alignment file {} does not exist".format(alignment_file_path))
+                logging.warning("alignment file {} does not exist".format(alignment_file_path))
                 continue
             # corresponding label file
             label_phone_path = os.path.join(self.label_phone_align, sent_index + '.lab')
@@ -87,12 +91,13 @@ class blzFrontEnd(FrontEnd):
                 para_end_time_list.append(end_time)
             non_silence_index_list = self.align_phone_map(para_sil_phone_list)
             sil_nonsil_map = OrderedDict()
-
-            if num>0:
-                break
             if num%5==4:
                 time.sleep(1)
 
+            new_para_sil_phone_list = []
+            for phone in para_sil_phone_list:
+                if phone != "sil" and phone != "sp":
+                    new_para_sil_phone_list.append(phone)
             word_list, pos_list = self.get_word_pos_list(sent_content,"baidu")
 
             # 分句子，按照道理应该在切词的前面 但是由于比较方便就放在后面了
@@ -101,6 +106,7 @@ class blzFrontEnd(FrontEnd):
             sent_num = len(all_sent)
             prev_sil_phone_index = 0 # index in align phone
             cur_sil_phone_index = 0
+            all_verbal_phone = []
             for num, word_pos in enumerate(all_sent):
                 # for each sentence and num is position of sentence in paragraph
                 sent_word_list, sent_pos_list = word_pos
@@ -108,24 +114,25 @@ class blzFrontEnd(FrontEnd):
                 new_word_list, new_pos_list,phrase_map = self.remove_punc(sent_word_list,sent_pos_list)
                 logger.debug("sentence content {}".format(''.join(new_word_list)))
                 phone_list, tone_list, syl_map, word_map,non_tone_line_phones = self.get_word_phone_list(new_word_list,using_tool=True)
+                all_verbal_phone.extend(phone_list)
                 non_sil_len = len(phone_list)
                 cur_sil_phone_index += non_sil_len
-                sil_ali_phone_index = non_silence_index_list[cur_sil_phone_index-1]
+
+                try:
+                    sil_ali_phone_index = non_silence_index_list[cur_sil_phone_index-1]
+                except IndexError:
+                    pdb.set_trace()
                 sil_phone_list = para_sil_phone_list[prev_sil_phone_index:sil_ali_phone_index+1]
+               # pdb.set_trace()
                 start_time_list = para_start_time_list[prev_sil_phone_index:sil_ali_phone_index+1]
                 end_time_list = para_end_time_list[prev_sil_phone_index:sil_ali_phone_index+1]
                 prev_sil_phone_index = sil_ali_phone_index+1
-
-                print(sil_phone_list)
-
-                pdb.set_trace()
 
                 non_sil_index = 0
                 for sil_index, sil_phone in enumerate(sil_phone_list):
                     if sil_phone != 'sil' and sil_phone != 'sp':
                         sil_nonsil_map[sil_index] = non_sil_index
                         non_sil_index = non_sil_index + 1
-
 
                 all_syl_len = len(tone_list)
                 all_phrase_len = phrase_map[len(phrase_map)-1]+1
