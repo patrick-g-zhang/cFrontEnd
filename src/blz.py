@@ -33,6 +33,7 @@ class blzFrontEnd(FrontEnd):
         # where is alignment file
         self.alignment_file_dir = "/home/gyzhang/Documents/aligned_blz_multi_2/"
         self.label_phone_align = "/home/gyzhang/projects/cFrontEnd/exp/blz/train/label_phone_align"
+        self.merlin_files="../exp/blz/train"
 
     def pre_process(self, raw_text):
         index = raw_text[0:7]
@@ -54,6 +55,19 @@ class blzFrontEnd(FrontEnd):
                 non_silence_index_list.append(num)
         return non_silence_index_list
 
+    def gen_file_id_list(self,):
+        """
+            generate file id list
+            because we know some files cannot be decoded, so the size of fild id list is determined by our alignment files
+        :return:
+        """
+        logger = logging.getLogger("generate file id")
+        logger.info("generate file id")
+        fild_id_list = os.path.join(self.merlin_files, "file_id_list.scp")
+        fid = open(fild_id_list,'w')
+        for file_path in glob.glob(self.alignment_file_dir+'*.TextGrid'):
+            file_index = re.split('\.',os.path.basename(file_path))[0]
+            fid.write(file_index+'\n')
 
     def create_phone_labels(self, ):
         with open(self.text_file_path, 'r') as fid:
@@ -89,6 +103,15 @@ class blzFrontEnd(FrontEnd):
                 para_sil_phone_list.append(phone)
                 para_start_time_list.append(start_time)
                 para_end_time_list.append(end_time)
+            # replace sp to sil 
+            replace_sil_phone_list = []
+            for my_sil_phone in para_sil_phone_list:
+                if my_sil_phone == "sp":
+                    replace_sil_phone_list.append("sil")
+                else:
+                    replace_sil_phone_list.append(my_sil_phone)
+            para_sil_phone_list = replace_sil_phone_list
+           # pdb.set_trace()
             non_silence_index_list = self.align_phone_map(para_sil_phone_list)
             sil_nonsil_map = OrderedDict()
             if num%5==4:
@@ -290,6 +313,7 @@ class blz:
 
     def hasNumbers(self, inputString):
         return any(char.isdigit() for char in inputString)
+
 
     def contains_letters(self, inputString):
         regexp = re.compile(r"[a-z]|[A-Z]")
