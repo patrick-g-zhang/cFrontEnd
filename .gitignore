@@ -1,0 +1,7 @@
+# Global compiled file
+*.pyc
+
+# Auto generated conf
+egs/**/conf/*
+!egs/**/conf/dnn
+exp/*
