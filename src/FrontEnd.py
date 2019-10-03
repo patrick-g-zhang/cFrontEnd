@@ -19,7 +19,8 @@ from jieba import posseg
 import tensorflow as tf
 from aip import AipNlp
 from pypinyin import pinyin,Style, style
-posseg.initialize(dictionary='../data/dicts/dict_name.dict')
+# from hanziconv import HanziConv
+posseg.initialize(dictionary='../data/dicts/simple_dict.txt')
 ld = Linguistic_DICT()
 logging.basicConfig(level = logging.INFO,format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -202,7 +203,7 @@ class FrontEnd(object):
         prosodic_map = OrderedDict()
         word_index = 0
         phrase_index = 0
-        for word, pos in zip(word_list,pos_list):
+        for word, pos in zip(word_list, pos_list):
             if word == "":
                 continue
             prosodic_map[word_index] = phrase_index
@@ -214,7 +215,7 @@ class FrontEnd(object):
             new_word_list.append(word)
             new_pos_list.append(pos)
         # logging.info(''.join(new_word_list))
-        return new_word_list,new_pos_list, prosodic_map
+        return new_word_list, new_pos_list, prosodic_map
 
     def get_word_pos_list(self, raw_text, tokenizer):
         """
@@ -228,6 +229,7 @@ class FrontEnd(object):
             pos_list -- list of pos in a sentence
         """
         raw_text = raw_text.strip()
+        # raw_text = HanziConv.toTraditional(raw_text)
         word_list = []
         pos_list = []
         # pdb.set_trace()
@@ -254,7 +256,7 @@ class FrontEnd(object):
                 word_list.append(item['item'])
         return word_list, pos_list
 
-    def get_word_phone_list(self,word_list,using_tool):
+    def get_word_phone_list(self, word_list, using_tool):
         """
             get phone list and phone array of word_list
 
@@ -271,8 +273,6 @@ class FrontEnd(object):
             word_map
             non_tone_line_phones
         """
-        self.english_dict = ld.get_lexicon_dict(lexicon_path='/home/gyzhang/speech_database/text/blz19/english.dict')
-        self.chinese_dict = ld.get_lexicon_dict(lexicon_path="/home/gyzhang/speech_database/text/blz19/lexicon_chinese_char.txt")
         flag = False
         phone_list = []
         tone_list = []
@@ -317,39 +317,16 @@ class FrontEnd(object):
                             pdb.set_trace()
             else:
                 word_phone_list = []
-                if hasNumbers(word):
-                    logging.warnings("There is a error")
-                    exit(0)
-                if contains_letters(word):
-                  #  pdb.set_trace()
-                    # 字里现在有字母
-                    m_list = re.findall(r'([a-zA-Z]+)', word)
-                    logging.warning("there is a letter {0}".format(word))
-                    for m in m_list:
-                        try:
-                            # Here we need a english dictionary to get phone sequence of
-                            english_seq = self.english_dict[m].copy()
-                            # add tone of english
-                            english_seq.append('5')
-                            word_phone_list.append(english_seq)
-                            flag = True
-                        except KeyError:
-                            logging.warning("wrong key error")
-                else:
-                    for character in pinyin(word,style=Style.TONE3):
-                        if character[0][:-1] in self.english_dict and flag:
-                            flag = False
-                            if character[0] == "you":
-                                character = ["E_you"]
-                            continue
-                        if not character[0][-1].isdigit():
-                            # 轻声作为第五声
-                            character[0]+='5'
-                        # assert character[0][-1].isdigit()
-                        char_phone_sequence = []
-                        char_phone_sequence = self.chinese_dict[character[0][:-1]].copy()
-                        char_phone_sequence.append(character[0][-1])
-                        word_phone_list.append(char_phone_sequence)
+                # word = HanziConv.toSimplified(word)
+                for character in pinyin(word, style=Style.TONE3):
+                    if not character[0][-1].isdigit():
+                        # 轻声作为第五声
+                        character[0] += '5'
+                    # assert character[0][-1].isdigit()
+                    char_phone_sequence = []
+                    char_phone_sequence = self.chinese_dict[character[0][:-1]].copy()
+                    char_phone_sequence.append(character[0][-1])
+                    word_phone_list.append(char_phone_sequence)
 
             for phone_t in word_phone_list:
                 char_phone = phone_t
